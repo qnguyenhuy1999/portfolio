@@ -65,7 +65,18 @@ pnpm install
 npm install
 ```
 
-3. Run the development server:
+3. **Environment Configuration** (Required for contact form):
+
+Create a `.env.local` file in the root directory:
+
+```bash
+# Google Apps Script URL for contact form
+NEXT_PUBLIC_GOOGLE_SCRIPT_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
+```
+
+**Note**: You need to set up a Google Apps Script to handle the contact form submissions. See the [Contact Form Setup](#contact-form-setup) section below.
+
+4. Run the development server:
 
 ```bash
 pnpm dev
@@ -73,7 +84,7 @@ pnpm dev
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
 ## 📜 Available Scripts
 
@@ -110,13 +121,80 @@ The portfolio is fully responsive and optimized for:
 - Tablet (768px - 1023px)
 - Mobile (320px - 767px)
 
+## 📧 Contact Form Setup
+
+The contact form uses Google Apps Script to handle form submissions. Here's how to set it up:
+
+### 1. Create Google Apps Script
+
+1. Go to [Google Apps Script](https://script.google.com/)
+2. Create a new project
+3. Replace the default code with:
+
+```javascript
+function doPost(e) {
+  try {
+    const data = JSON.parse(e.postData.contents);
+    const { name, email, message } = data;
+
+    // Log the submission (optional)
+    console.log("Form submission:", { name, email, message });
+
+    // You can add email sending logic here
+    // Example: sendEmail(name, email, message);
+
+    return ContentService.createTextOutput(
+      JSON.stringify({ result: "success" })
+    ).setMimeType(ContentService.MimeType.JSON);
+  } catch (error) {
+    console.error("Error processing form:", error);
+    return ContentService.createTextOutput(
+      JSON.stringify({ result: "error", error: error.toString() })
+    ).setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
+// Optional: Function to send email notifications
+function sendEmail(name, email, message) {
+  const recipient = "your-email@gmail.com"; // Replace with your email
+  const subject = `New Contact Form Submission from ${name}`;
+  const body = `
+    Name: ${name}
+    Email: ${email}
+    Message: ${message}
+  `;
+
+  GmailApp.sendEmail(recipient, subject, body);
+}
+```
+
+### 2. Deploy as Web App
+
+1. Click "Deploy" → "New deployment"
+2. Choose "Web app" as the type
+3. Set "Execute as" to "Me"
+4. Set "Who has access" to "Anyone"
+5. Click "Deploy"
+6. Copy the Web app URL
+
+### 3. Configure Environment Variable
+
+Add the Web app URL to your `.env.local` file:
+
+```bash
+NEXT_PUBLIC_GOOGLE_SCRIPT_URL=https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec
+```
+
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
 
 1. Push your code to GitHub
 2. Connect your repository to [Vercel](https://vercel.com)
-3. Deploy with one click
+3. Add the environment variable in Vercel dashboard:
+   - Go to Project Settings → Environment Variables
+   - Add `NEXT_PUBLIC_GOOGLE_SCRIPT_URL` with your Google Script URL
+4. Deploy with one click
 
 ### Other Platforms
 
@@ -126,6 +204,8 @@ The app can be deployed on any platform that supports Next.js:
 - Railway
 - AWS Amplify
 - Google Cloud Platform
+
+**Remember to add the `NEXT_PUBLIC_GOOGLE_SCRIPT_URL` environment variable on your deployment platform.**
 
 ## 🔗 Links
 

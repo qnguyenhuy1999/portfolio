@@ -135,6 +135,7 @@ export default function Hero() {
           stiffness: 100,
         }}
         className="mb-4 text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight"
+        itemProp="name"
       >
         Nguyen Quang Huy
       </motion.h1>
@@ -154,9 +155,12 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           variants={child}
+          itemProp="jobTitle"
         >
           {text.slice(0, visibleCount)}
-          <span className="blinking-cursor">|</span>
+          <span className="blinking-cursor" aria-hidden="true">
+            |
+          </span>
         </motion.h3>
       </motion.div>
 
@@ -165,6 +169,7 @@ export default function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.8 }}
         className="max-w-2xl text-base sm:text-lg md:text-xl px-4 sm:px-0 leading-relaxed"
+        itemProp="description"
       >
         Crafting exceptional banking, fintech, and HR industry experiences with
         clean code and thoughtful design.
@@ -211,6 +216,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="whitespace-nowrap"
+              aria-label={`Visit ${social.name} profile`}
             >
               {social.name}
             </a>

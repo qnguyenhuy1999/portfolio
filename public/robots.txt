@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://nguyen-quang-huy-portfolio.vercel.app//sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow any admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow all other content
+Allow: /about
+Allow: /experience
+Allow: /projects
+Allow: /contact
+Allow: /certifications 

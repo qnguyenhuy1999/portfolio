@@ -38,6 +38,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          id="about-heading"
         >
           About Me
         </motion.h2>
@@ -106,6 +107,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.6 }}
+                id="core-technologies"
               >
                 Core Technologies
               </motion.h4>
@@ -137,6 +139,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.9 }}
+                id="soft-skills"
               >
                 Soft Skills
               </motion.h4>
