@@ -27,20 +27,39 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="px-4 py-20">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="mb-6 text-5xl font-bold text-center gradient-text">
+    <section id="testimonials" className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="mb-8 sm:mb-10 text-3xl sm:text-4xl md:text-5xl font-bold text-center gradient-text">
           Client Testimonials
         </h2>
 
-        {testimonials.map((test, i) => (
-          <div key={i} className="mb-8">
-            <p className="mb-2 italic">{`"${test.quote}"`}</p>
-            <p className="font-semibold">
-              {test.name}, <span>{test.title}</span>
-            </p>
-          </div>
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          {testimonials.map((test, i) => (
+            <div
+              key={i}
+              className="p-6 sm:p-8 rounded-2xl card-background hover:shadow-lg transition-shadow duration-300"
+            >
+              <div className="mb-4">
+                <svg
+                  className="w-8 h-8 text-gray-400 mb-3"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+                <p className="text-sm sm:text-base leading-relaxed italic text-gray-300">
+                  {test.quote}
+                </p>
+              </div>
+              <div className="border-t border-gray-700 pt-4">
+                <p className="font-semibold text-sm sm:text-base">
+                  {test.name}
+                </p>
+                <p className="text-sm text-gray-400">{test.title}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

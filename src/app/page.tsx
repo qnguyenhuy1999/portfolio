@@ -13,6 +13,19 @@ export default function Home() {
       <div className="blob blob-blue"></div>
       <div className="blob blob-pink"></div>
 
+      {/* Floating particles */}
+      <div className="floating-particles">
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+      </div>
+
       <Navbar />
       <main>
         <Hero />

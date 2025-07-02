@@ -1,3 +1,5 @@
+"use client";
+
 import {
   CircleCheck,
   Clock9,
@@ -8,6 +10,7 @@ import {
   MessageCircleCode,
   Rocket,
 } from "lucide-react";
+import { motion } from "motion/react";
 
 const techStack = [
   "React",
@@ -27,17 +30,36 @@ const softSkills = [
 
 export default function About() {
   return (
-    <section id="about" className="px-4 py-20">
+    <section id="about" className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
       <div className="mx-auto max-w-5xl">
-        <h2 className="mb-6 text-5xl font-bold text-center gradient-text">
+        <motion.h2
+          className="mb-6 text-3xl sm:text-4xl md:text-5xl font-bold text-center gradient-text"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           About Me
-        </h2>
+        </motion.h2>
 
-        <div className="grid grid-cols-[2fr_auto] gap-10">
-          <div className="p-8 rounded-2xl card-background">
+        <div className="grid grid-cols-1 lg:grid-cols-[2fr_auto] gap-6 lg:gap-10">
+          <motion.div
+            className="p-6 sm:p-8 rounded-2xl card-background hover-lift"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            whileHover={{ scale: 1.02 }}
+          >
             <div>
               <div className="main-intro">
-                <p className="mb-4 text-xl">
+                <motion.p
+                  className="mb-4 text-base sm:text-lg md:text-xl leading-relaxed"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                >
                   A passionate{" "}
                   <span className="font-semibold text-secondary">
                     Full Stack Developer
@@ -46,97 +68,218 @@ export default function About() {
                   <span className="font-semibold text-green-300">4+ years</span>{" "}
                   of experience crafting web application experiences that users
                   love.
-                </p>
+                </motion.p>
 
                 <hr className="my-4 text-gray-50" />
 
-                <p className="mb-4">
+                <motion.p
+                  className="mb-4 text-sm sm:text-base leading-relaxed"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
                   I specialize in building scalable web and mobile applications
                   using React, Next.js, TypeScript, and modern development
                   technologies. I thrive on turning complex problems into
                   elegant solutions that users love.
-                </p>
-                <p className="mb-6">
+                </motion.p>
+                <motion.p
+                  className="mb-6 text-sm sm:text-base leading-relaxed"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
                   Beyond work, I love exploring emerging technologies,
                   contributing to open-source projects, and mentoring aspiring
                   developers. I believe in continuous learning and staying at
                   the forefront of technological innovation.
-                </p>
+                </motion.p>
               </div>
 
               <hr className="my-4 text-gray-50" />
 
-              <h4 className="mb-4 font-semibold">Core Technologies</h4>
-              <div className="flex flex-wrap gap-4">
-                {techStack.map((tech) => (
-                  <span key={tech} className="chip">
+              <motion.h4
+                className="mb-4 font-semibold text-base sm:text-lg"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                Core Technologies
+              </motion.h4>
+              <motion.div
+                className="flex flex-wrap gap-2 sm:gap-4"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
+                {techStack.map((tech, index) => (
+                  <motion.span
+                    key={tech}
+                    className="chip text-xs sm:text-sm"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
+                    whileHover={{ scale: 1.1, rotate: 2 }}
+                  >
                     {tech}
-                  </span>
+                  </motion.span>
                 ))}
-              </div>
+              </motion.div>
 
-              <h4 className="my-4 font-semibold">Soft Skills</h4>
-              <div className="flex flex-wrap gap-4">
-                {softSkills.map((tech) => (
-                  <span key={tech} className="chip">
-                    {tech}
-                  </span>
+              <motion.h4
+                className="my-4 font-semibold text-base sm:text-lg"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+              >
+                Soft Skills
+              </motion.h4>
+              <motion.div
+                className="flex flex-wrap gap-2 sm:gap-4"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+              >
+                {softSkills.map((skill, index) => (
+                  <motion.span
+                    key={skill}
+                    className="chip text-xs sm:text-sm"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: 1.1 + index * 0.1 }}
+                    whileHover={{ scale: 1.1, rotate: -2 }}
+                  >
+                    {skill}
+                  </motion.span>
                 ))}
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col gap-10">
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-purple-950/30 to-pink-950/30 backdrop-blur-sm  border-gray-700/40 shadow-xl">
-              <h4 className="mb-4 font-semibold flex gap-2 items-center">
-                <MessageCircleCode size={22} className="text-purple-500" />{" "}
+          <div className="flex flex-col gap-6 lg:gap-10">
+            <motion.div
+              className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-purple-950/30 to-pink-950/30 backdrop-blur-sm border-gray-700/40 shadow-xl hover-lift"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <motion.h4
+                className="mb-4 font-semibold flex gap-2 items-center text-sm sm:text-base"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <MessageCircleCode
+                  size={20}
+                  className="text-purple-500 flex-shrink-0 bounce-gentle"
+                />{" "}
                 Let&apos;s Connect
-              </h4>
-              <ul className="flex flex-col gap-5">
-                <li className="flex items-center gap-2">
-                  <Mail
-                    size={22}
-                    className="bg-gradient-to-r from-orange-500 to-red-500 rounded-md p-1"
-                  />{" "}
-                  qnguyenhuy1999@gmail.com
-                </li>
-                <li className="flex items-center gap-2">
-                  <Globe
-                    size={22}
-                    className="p-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-md"
-                  />{" "}
-                  Website
-                </li>
-                <li className="flex items-center gap-2">
-                  <MapPinCheckInside
-                    size={22}
-                    className="bg-gradient-to-r from-orange-500 to-red-500 rounded-md p-1"
-                  />{" "}
-                  Ho Chi Minh city, Viet Nam
-                </li>
+              </motion.h4>
+              <ul className="flex flex-col gap-4 sm:gap-5">
+                {[
+                  {
+                    icon: Mail,
+                    text: "qnguyenhuy1999@gmail.com",
+                    gradient: "from-orange-500 to-red-500",
+                  },
+                  {
+                    icon: Globe,
+                    text: "Website",
+                    gradient: "from-cyan-500 to-blue-500",
+                  },
+                  {
+                    icon: MapPinCheckInside,
+                    text: "Ho Chi Minh city, Viet Nam",
+                    gradient: "from-orange-500 to-red-500",
+                  },
+                ].map((item, index) => (
+                  <motion.li
+                    key={index}
+                    className="flex items-center gap-2 text-sm sm:text-base"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    whileHover={{ x: 5 }}
+                  >
+                    <item.icon
+                      size={20}
+                      className={`p-1 bg-gradient-to-r ${item.gradient} rounded-md flex-shrink-0`}
+                    />{" "}
+                    <span className="break-all">{item.text}</span>
+                  </motion.li>
+                ))}
               </ul>
-            </div>
+            </motion.div>
 
-            <div className="p-8 rounded-2xl card-background">
-              <h4 className="mb-4 font-semibold flex gap-2 items-center">
-                <Rocket size={22} className="text-green-500" /> Available for
-                Hire
-              </h4>
-              <ul className="flex flex-col gap-5">
-                <li className="flex items-center gap-2">
-                  <CircleCheck size={22} className="text-green-500" /> Open to
-                  New Opportunities
-                </li>
-                <li className="flex items-center gap-2">
-                  <Earth size={22} className="text-cyan-600" /> Acceptance to
-                  freelance job
-                </li>
-                <li className="flex items-center gap-2">
-                  <Clock9 size={22} className="text-blue-500" /> Remote &
-                  On-site Available
-                </li>
+            <motion.div
+              className="p-6 sm:p-8 rounded-2xl card-background hover-lift"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <motion.h4
+                className="mb-4 font-semibold flex gap-2 items-center text-sm sm:text-base"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+              >
+                <Rocket
+                  size={20}
+                  className="text-green-500 flex-shrink-0 bounce-gentle"
+                />{" "}
+                Available for Hire
+              </motion.h4>
+              <ul className="flex flex-col gap-4 sm:gap-5">
+                {[
+                  {
+                    icon: CircleCheck,
+                    text: "Open to New Opportunities",
+                    color: "text-green-500",
+                  },
+                  {
+                    icon: Earth,
+                    text: "Acceptance to freelance job",
+                    color: "text-cyan-600",
+                  },
+                  {
+                    icon: Clock9,
+                    text: "Remote & On-site Available",
+                    color: "text-blue-500",
+                  },
+                ].map((item, index) => (
+                  <motion.li
+                    key={index}
+                    className="flex items-center gap-2 text-sm sm:text-base"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                    whileHover={{ x: 5 }}
+                  >
+                    <item.icon
+                      size={20}
+                      className={`${item.color} flex-shrink-0`}
+                    />{" "}
+                    {item.text}
+                  </motion.li>
+                ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

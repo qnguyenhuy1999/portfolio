@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 const experiences = [
   {
     title: "Software Engineer",
@@ -21,7 +25,7 @@ const experiences = [
       "Spearheaded organizational transformation from paper-based manual systems to completely integrated HIMS and PACS.",
     ],
     achievements: [
-      "Built responsive UI using ReactJS and TypeScript for ACB Bank’s Vendor Management System",
+      "Built responsive UI using ReactJS and TypeScript for ACB Bank's Vendor Management System",
       "Developed investment management features for CII D-INVEST, emphasizing UI consistency and backend API integration using NextJS",
     ],
     skills: ["JavaScript", "ReactJS", "TypeScript", "NextJS"],
@@ -50,47 +54,166 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="px-4 py-20">
+    <section id="experience" className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
       <div className="max-w-5xl mx-auto">
-        <h2 className="mb-6 text-5xl font-bold text-center gradient-text">
+        <motion.h2
+          className="mb-6 text-3xl sm:text-4xl md:text-5xl font-bold text-center gradient-text"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           Experience
-        </h2>
-        <p className="mb-10 text-lg font-semibold text-center">
+        </motion.h2>
+        <motion.p
+          className="mb-8 sm:mb-10 text-base sm:text-lg font-semibold text-center px-4"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
           My professional journey and the impact I&apos;ve made across different
           domains
-        </p>
+        </motion.p>
 
-        {experiences.map((exp) => (
-          <div key={exp.company} className="mb-12">
-            <h3 className="text-2xl font-extrabold">
-              {exp.title} - {exp.company}
-            </h3>
-            <p className="mb-4 font-semibold text-secondary">{exp.date}</p>
-            <div className="mb-4 text-lg">
-              {exp.description.map((desc, i) => (
-                <p key={i} className="mb-2">
-                  {desc}
-                </p>
-              ))}
-            </div>
-            <h4 className="mb-2 text-lg font-semibold">Key Achievements</h4>
-            <ul className="mb-4 list-disc list-inside">
-              {exp.achievements.map((ach, i) => (
-                <li key={i}>{ach}</li>
-              ))}
-            </ul>
-            <h4 className="mb-2 text-lg font-semibold">
-              Technologies & Skills
-            </h4>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {exp.skills.map((skill) => (
-                <span key={skill} className="chip">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-        ))}
+        <div className="space-y-8 sm:space-y-12">
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={exp.company}
+              className="p-6 sm:p-8 rounded-2xl card-background hover-lift"
+              initial={{ opacity: 0, y: 50, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, y: 0, x: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3 + index * 0.2,
+                type: "spring",
+                stiffness: 100,
+              }}
+              whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.2 },
+              }}
+            >
+              <motion.h3
+                className="text-xl sm:text-2xl font-extrabold mb-2 sm:mb-3"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.2 }}
+              >
+                {exp.title} - {exp.company}
+              </motion.h3>
+              <motion.p
+                className="mb-4 font-semibold text-secondary text-sm sm:text-base"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 + index * 0.2 }}
+              >
+                {exp.date}
+              </motion.p>
+
+              <motion.div
+                className="mb-4 text-sm sm:text-base leading-relaxed"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 + index * 0.2 }}
+              >
+                {exp.description.map((desc, i) => (
+                  <motion.p
+                    key={i}
+                    className="mb-2"
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.4,
+                      delay: 0.7 + index * 0.2 + i * 0.1,
+                    }}
+                  >
+                    {desc}
+                  </motion.p>
+                ))}
+              </motion.div>
+
+              <motion.h4
+                className="mb-2 text-base sm:text-lg font-semibold"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.8 + index * 0.2 }}
+              >
+                Key Achievements
+              </motion.h4>
+              <motion.ul
+                className="mb-4 list-disc list-inside text-sm sm:text-base space-y-1"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.9 + index * 0.2 }}
+              >
+                {exp.achievements.map((ach, i) => (
+                  <motion.li
+                    key={i}
+                    className="leading-relaxed"
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.4,
+                      delay: 1.0 + index * 0.2 + i * 0.1,
+                    }}
+                    whileHover={{ x: 5 }}
+                  >
+                    {ach}
+                  </motion.li>
+                ))}
+              </motion.ul>
+
+              <motion.h4
+                className="mb-2 text-base sm:text-lg font-semibold"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 1.1 + index * 0.2 }}
+              >
+                Technologies & Skills
+              </motion.h4>
+              <motion.div
+                className="flex flex-wrap gap-2 mt-2"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 1.2 + index * 0.2 }}
+              >
+                {exp.skills.map((skill, skillIndex) => (
+                  <motion.span
+                    key={skill}
+                    className="chip text-xs sm:text-sm"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.4,
+                      delay: 1.3 + index * 0.2 + skillIndex * 0.1,
+                      type: "spring",
+                      stiffness: 200,
+                    }}
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: 2,
+                      transition: { duration: 0.2 },
+                    }}
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
