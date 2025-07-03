@@ -1,3 +1,4 @@
+import { ENVIRONMENT_VARIABLES } from "@constants/config";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
@@ -9,7 +10,7 @@ export default async function handler(
   }
 
   try {
-    const googleScriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
+    const googleScriptUrl = ENVIRONMENT_VARIABLES.GOOGLE_SCRIPT_URL;
 
     if (!googleScriptUrl) {
       return res.status(500).json({

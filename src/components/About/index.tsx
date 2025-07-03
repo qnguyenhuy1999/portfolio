@@ -1,5 +1,6 @@
 "use client";
 
+import { ENVIRONMENT_VARIABLES } from "@constants/config";
 import {
   CircleCheck,
   Clock9,
@@ -193,12 +194,14 @@ export default function About() {
                 {[
                   {
                     icon: Mail,
-                    text: "qnguyenhuy1999@gmail.com",
+                    text: ENVIRONMENT_VARIABLES.EMAIL,
+                    link: `mailto:${ENVIRONMENT_VARIABLES.EMAIL}`,
                     gradient: "from-orange-500 to-red-500",
                   },
                   {
                     icon: Globe,
                     text: "Website",
+                    link: ENVIRONMENT_VARIABLES.PUBLIC_DOMAIN,
                     gradient: "from-cyan-500 to-blue-500",
                   },
                   {

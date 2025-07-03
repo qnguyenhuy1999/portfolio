@@ -1,3 +1,4 @@
+import { ENVIRONMENT_VARIABLES } from "@constants/config";
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
@@ -7,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/admin/", "/private/", "/api/"],
     },
-    sitemap: `${process.env.NEXT_PUBLIC_DOMAIN}/sitemap.xml`,
+    sitemap: `${ENVIRONMENT_VARIABLES.PUBLIC_DOMAIN}/sitemap.xml`,
   };
 }

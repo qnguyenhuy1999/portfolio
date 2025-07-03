@@ -1,5 +1,6 @@
 "use client";
 
+import { ENVIRONMENT_VARIABLES } from "@constants/config";
 import { motion, Variants } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -7,22 +8,22 @@ import { useEffect, useState } from "react";
 const socials = [
   {
     name: "GitHub",
-    url: "https://github.com/qnguyenhuy1999",
+    url: ENVIRONMENT_VARIABLES.GITHUB,
     src: "/icons/GitHub_dark.svg",
   },
   {
     name: "Gitlab",
-    url: "https://gitlab.com/qnguyenhuy1999",
+    url: ENVIRONMENT_VARIABLES.GITLAB,
     src: "/icons/gitlab.svg",
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/huynq-2912",
+    url: ENVIRONMENT_VARIABLES.LINKEDIN,
     src: "/icons/linkedin.svg",
   },
   {
     name: "Email",
-    url: "mailto:qnguyenhuy1999@gmail.com",
+    url: `mailto:${ENVIRONMENT_VARIABLES.EMAIL}`,
     src: "/icons/gmail.svg",
   },
 ];

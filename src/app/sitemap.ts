@@ -1,9 +1,8 @@
+import { ENVIRONMENT_VARIABLES } from "@constants/config";
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_DOMAIN ||
-    "https://nguyen-quang-huy-portfolio.vercel.app"; // Replace with your actual domain
+  const baseUrl = ENVIRONMENT_VARIABLES.PUBLIC_DOMAIN;
 
   return [
     {

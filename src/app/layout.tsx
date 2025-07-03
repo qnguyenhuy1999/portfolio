@@ -1,3 +1,4 @@
+import { ENVIRONMENT_VARIABLES } from "@constants/config";
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
@@ -37,17 +38,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_DOMAIN ||
-      "https://nguyen-quang-huy-portfolio.vercel.app"
-  ), // Replace with your actual domain
+  metadataBase: new URL(ENVIRONMENT_VARIABLES.PUBLIC_DOMAIN),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: process.env.NEXT_PUBLIC_DOMAIN, // Replace with your actual domain
+    url: ENVIRONMENT_VARIABLES.PUBLIC_DOMAIN,
     title:
       "Nguyen Quang Huy - Full Stack Developer | React, Next.js, TypeScript",
     description:
@@ -122,13 +120,13 @@ export default function RootLayout({
               jobTitle: "Full Stack Developer",
               description:
                 "Full Stack Developer with 4+ years of experience specializing in React, Next.js, TypeScript, and modern web technologies.",
-              url: process.env.NEXT_PUBLIC_DOMAIN, // Replace with your actual domain
+              url: ENVIRONMENT_VARIABLES.PUBLIC_DOMAIN, // Replace with your actual domain
               sameAs: [
-                "https://github.com/qnguyenhuy1999",
-                "https://gitlab.com/qnguyenhuy1999",
-                "https://linkedin.com/in/huynq-2912",
+                ENVIRONMENT_VARIABLES.GITHUB,
+                ENVIRONMENT_VARIABLES.GITLAB,
+                ENVIRONMENT_VARIABLES.LINKEDIN,
               ],
-              email: "qnguyenhuy1999@gmail.com",
+              email: ENVIRONMENT_VARIABLES.EMAIL,
               knowsAbout: [
                 "React",
                 "Next.js",
@@ -164,14 +162,14 @@ export default function RootLayout({
               name: "Nguyen Quang Huy Portfolio",
               description:
                 "Full Stack Developer Portfolio showcasing React, Next.js, TypeScript projects and experience.",
-              url: process.env.NEXT_PUBLIC_DOMAIN, // Replace with your actual domain
+              url: ENVIRONMENT_VARIABLES.PUBLIC_DOMAIN, // Replace with your actual domain
               author: {
                 "@type": "Person",
                 name: "Nguyen Quang Huy",
               },
               potentialAction: {
                 "@type": "SearchAction",
-                target: `${process.env.NEXT_PUBLIC_DOMAIN}/search?q={search_term_string}`,
+                target: `${ENVIRONMENT_VARIABLES.PUBLIC_DOMAIN}/search?q={search_term_string}`,
                 "query-input": "required name=search_term_string",
               },
             }),

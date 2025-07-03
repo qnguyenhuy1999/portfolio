@@ -1,5 +1,6 @@
 "use client";
 
+import { ENVIRONMENT_VARIABLES } from "@constants/config";
 import { useState } from "react";
 
 export default function Contact() {
@@ -113,7 +114,7 @@ export default function Contact() {
               htmlFor="message"
               className="text-sm sm:text-base font-medium"
             >
-              Message
+              Say something to me...
             </label>
             <textarea
               name="message"
@@ -142,7 +143,7 @@ export default function Contact() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
             <div className="button hover:scale-105 transition-transform duration-300">
               <a
-                href="mailto:qnguyenhuy1999@gmail.com"
+                href={`mailto:${ENVIRONMENT_VARIABLES.EMAIL}`}
                 className="font-bold text-white hover:underline text-sm sm:text-base"
               >
                 Send Email
