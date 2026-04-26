@@ -15,7 +15,7 @@ const stackItems = [
     category: "Backend",
     name: "NestJS",
     level: "Expert",
-    years: "1 years exp",
+    years: "4 years exp",
   },
   {
     category: "Backend",
