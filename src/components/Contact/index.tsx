@@ -151,7 +151,7 @@ export default function Contact() {
             </div>
             <div className="button hover:scale-105 transition-transform duration-300">
               <a
-                href="/documents/CV - Nguyen_Quang_Huy.pdf"
+                href="/documents/CV_NguyenQuangHuy.pdf"
                 target="_blank"
                 className="text-sm sm:text-base"
               >

@@ -12,7 +12,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Nguyen Quang Huy - Full Stack Developer | React, Next.js, TypeScript",
   description:
-    "Full Stack Developer with 4+ years of experience specializing in React, Next.js, TypeScript, and modern web technologies. Crafting exceptional banking, fintech, and HR industry experiences.",
+    "Full-Stack JavaScript Engineer with 5+ years of experience specializing in React, Next.js, NestJS, and TypeScript. Building scalable systems across banking, fintech, HR, and marketplace domains.",
   keywords: [
     "Nguyen Quang Huy",
     "Full Stack Developer",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     title:
       "Nguyen Quang Huy - Full Stack Developer | React, Next.js, TypeScript",
     description:
-      "Full Stack Developer with 4+ years of experience specializing in React, Next.js, TypeScript, and modern web technologies. Crafting exceptional banking, fintech, and HR industry experiences.",
+      "Full-Stack JavaScript Engineer with 5+ years of experience specializing in React, Next.js, NestJS, and TypeScript. Building scalable systems across banking, fintech, HR, and marketplace domains.",
     siteName: "Nguyen Quang Huy Portfolio",
     images: [
       {
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title:
       "Nguyen Quang Huy - Full Stack Developer | React, Next.js, TypeScript",
     description:
-      "Full Stack Developer with 4+ years of experience specializing in React, Next.js, TypeScript, and modern web technologies.",
+      "Full-Stack JavaScript Engineer with 5+ years of experience specializing in React, Next.js, NestJS, and TypeScript.",
     images: ["/og-image.jpg"], // Same as Open Graph image
     creator: "@your-twitter-handle", // Replace with your Twitter handle
   },
@@ -119,7 +119,7 @@ export default function RootLayout({
               name: "Nguyen Quang Huy",
               jobTitle: "Full Stack Developer",
               description:
-                "Full Stack Developer with 4+ years of experience specializing in React, Next.js, TypeScript, and modern web technologies.",
+                "Full-Stack JavaScript Engineer with 5+ years of experience specializing in React, Next.js, NestJS, and TypeScript.",
               url: ENVIRONMENT_VARIABLES.PUBLIC_DOMAIN, // Replace with your actual domain
               sameAs: [
                 ENVIRONMENT_VARIABLES.GITHUB,
@@ -133,12 +133,15 @@ export default function RootLayout({
                 "TypeScript",
                 "JavaScript",
                 "Node.js",
+                "NestJS",
                 "Express.js",
+                "PostgreSQL",
                 "Web Development",
                 "Full Stack Development",
                 "Fintech",
                 "Banking Software",
                 "HR Software",
+                "Automotive Marketplace",
               ],
               worksFor: {
                 "@type": "Organization",

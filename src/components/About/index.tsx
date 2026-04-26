@@ -18,7 +18,9 @@ const techStack = [
   "Next.js",
   "TypeScript",
   "Node.js",
+  "NestJS",
   "Express.js",
+  "PostgreSQL",
   "JavaScript",
 ];
 
@@ -64,12 +66,12 @@ export default function About() {
                 >
                   A passionate{" "}
                   <span className="font-semibold text-secondary">
-                    Full Stack Developer
+                    Full-Stack JavaScript Engineer
                   </span>{" "}
                   with{" "}
-                  <span className="font-semibold text-green-300">4+ years</span>{" "}
-                  of experience crafting web application experiences that users
-                  love.
+                  <span className="font-semibold text-green-300">5+ years</span>{" "}
+                  of experience building scalable systems across banking,
+                  fintech, HR, and marketplace domains.
                 </motion.p>
 
                 <hr className="my-4 text-gray-50" />
@@ -81,10 +83,10 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                  I specialize in building scalable web and mobile applications
-                  using React, Next.js, TypeScript, and modern development
-                  technologies. I thrive on turning complex problems into
-                  elegant solutions that users love.
+                  I specialize in React, Next.js, NestJS, and TypeScript, with
+                  hands-on experience designing modular architectures,
+                  optimizing high-traffic systems (~100K users), and improving
+                  performance across both frontend and backend layers.
                 </motion.p>
                 <motion.p
                   className="mb-6 text-sm sm:text-base leading-relaxed"
@@ -93,10 +95,10 @@ export default function About() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.5 }}
                 >
-                  Beyond work, I love exploring emerging technologies,
-                  contributing to open-source projects, and mentoring aspiring
-                  developers. I believe in continuous learning and staying at
-                  the forefront of technological innovation.
+                  Beyond shipping product work, I focus on scalability,
+                  reliability, and long-term maintainability — mentoring
+                  teammates, leading code reviews, and contributing to
+                  architectural discussions in enterprise environments.
                 </motion.p>
               </div>
 
