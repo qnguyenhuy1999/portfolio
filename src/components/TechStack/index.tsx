@@ -9,19 +9,19 @@ const stackItems = [
     category: "Backend",
     name: "Node.js",
     level: "Expert",
-    years: "4 years exp",
+    years: "5 years exp",
   },
   {
     category: "Backend",
-    name: "NodeJS",
+    name: "NestJS",
     level: "Expert",
-    years: "4 years exp",
+    years: "1 years exp",
   },
   {
     category: "Backend",
     name: "ExpressJS",
     level: "Expert",
-    years: "4 years exp",
+    years: "5 years exp",
   },
   {
     category: "Backend",
@@ -33,25 +33,25 @@ const stackItems = [
     category: "Frontend",
     name: "React",
     level: "Expert",
-    years: "4 years exp",
+    years: "5 years exp",
   },
   {
     category: "Frontend",
     name: "Next.js",
     level: "Expert",
-    years: "4 years exp",
+    years: "5 years exp",
   },
   {
     category: "Frontend",
     name: "TypeScript",
     level: "Expert",
-    years: "4 years exp",
+    years: "5 years exp",
   },
   {
     category: "Frontend",
     name: "JavaScript",
     level: "Expert",
-    years: "5 years exp",
+    years: "6 years exp",
   },
   {
     category: "Frontend",
@@ -62,8 +62,8 @@ const stackItems = [
   {
     category: "Database",
     name: "PostgreSQL",
-    level: "Intermediate",
-    years: "3 years exp",
+    level: "Expert",
+    years: "4 years exp",
   },
   {
     category: "Database",
@@ -99,7 +99,7 @@ const stackItems = [
     category: "Cloud & DevOps",
     name: "Git",
     level: "Expert",
-    years: "5 years exp",
+    years: "6 years exp",
   },
 ];
 

@@ -172,8 +172,8 @@ export default function Hero() {
         className="max-w-2xl text-base sm:text-lg md:text-xl px-4 sm:px-0 leading-relaxed"
         itemProp="description"
       >
-        Crafting exceptional banking, fintech, and HR industry experiences with
-        clean code and thoughtful design.
+        Building scalable systems across banking, fintech, HR, and marketplace
+        domains with React, Next.js, and NestJS.
       </motion.p>
 
       <motion.div
